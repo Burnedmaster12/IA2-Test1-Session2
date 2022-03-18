@@ -1,1 +1,71 @@
-a 
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from ./a.out...done.
+(gdb) b main
+Breakpoint 1 at 0x83a: file p0final.c, line 18.
+(gdb) r
+Starting program: /home/runner/IA2-Test1-Session2-2/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p0final.c:18
+18  {
+(gdb) s
+20  input(&b,&h);
+(gdb) s
+input (base=0x7ffdca82cb4c, height=0x7ffdca82cb50) at p0final.c:4
+4     printf("enter the base of the triangle\n");
+(gdb) n
+enter the base of the triangle
+5     scanf("%f",base);
+(gdb) n
+1
+6     printf("enter the height of the triangle\n");
+(gdb) n
+enter the height of the triangle
+7     scanf("%f",height);
+(gdb) n
+2
+8   }
+(gdb) n
+main () at p0final.c:21
+21  find_area(b,h,&areaa);
+(gdb) s
+find_area (base=1, height=2, area=0x7ffdca82cb54) at p0final.c:11
+11    *area=0.5*(base*height);
+(gdb) n
+12  }
+(gdb) n
+main () at p0final.c:22
+22  output(b,h,areaa);
+(gdb) s
+output (base=1, height=2, area=1) at p0final.c:15
+15    printf("The area of triangle with base %f and height %f is %f",base,height,area);
+(gdb) n
+16  }
+(gdb) n
+main () at p0final.c:23
+23  }
+(gdb) n
+__libc_start_main (main=0x55c660000832 <main>, argc=1, argv=0x7ffdca82cc48, 
+    init=<optimized out>, fini=<optimized out>, rtld_fini=<optimized out>, 
+    stack_end=0x7ffdca82cc38) at ../csu/libc-start.c:344
+344 ../csu/libc-start.c: No such file or directory.
+(gdb) s
+__GI_exit (status=0) at exit.c:139
+139 exit.c: No such file or directory.
+(gdb) p
+The history is empty.
+(gdb) l
+134 in exit.c
