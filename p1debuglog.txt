@@ -1,0 +1,109 @@
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from ./a.out...done.
+(gdb) b main
+Breakpoint 1 at 0x7fa: file p1final.c, line 38.
+(gdb) r
+Starting program: /home/runner/IA2-Test1-Session2-2/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p1final.c:38
+38    a=input_side();
+(gdb) s
+input_side () at p1final.c:4
+4   {
+(gdb) s
+6     printf("enter the  sides of the triange");
+(gdb) n
+7     scanf("%d",&a);
+(gdb) n
+enter the  sides of the triangen
+8     return a;
+(gdb) n
+9   }
+(gdb) n
+main () at p1final.c:39
+39    b=input_side();
+(gdb) s
+input_side () at p1final.c:4
+4   {
+(gdb) n
+6     printf("enter the  sides of the triange");
+(gdb) n
+7     scanf("%d",&a);
+(gdb) n
+8     return a;
+(gdb) n
+9   }
+(gdb) n
+main () at p1final.c:40
+40    c=input_side();
+(gdb) s
+input_side () at p1final.c:4
+4   {
+(gdb) n
+6     printf("enter the  sides of the triange");
+(gdb) n
+7     scanf("%d",&a);
+(gdb) n
+8     return a;
+(gdb) n
+9   }
+(gdb) n
+main () at p1final.c:41
+41    r=check_scalene(a,b,c);
+(gdb) s
+check_scalene (a=32672, b=32672, c=32672) at p1final.c:13
+13    if(a!=b && b!=c && c!=a)
+(gdb) n
+19      r=0;
+(gdb) n
+21  return r;
+(gdb) n
+22  }
+(gdb) n
+main () at p1final.c:42
+42    output(a,b,c,r);
+(gdb) s
+output (a=32672, b=32672, c=32672, isscalene=0)
+    at p1final.c:26
+26    if(r==1)
+(gdb) n
+30    if(r==0)
+(gdb) n
+32      printf("not scalene");
+(gdb) n
+34  }
+(gdb) n
+main () at p1final.c:43
+43  }(gdb) s
+__libc_start_main (main=0x55ec05c007f2 <main>, argc=1, 
+    argv=0x7fffa1e44008, init=<optimized out>, 
+    fini=<optimized out>, rtld_fini=<optimized out>, 
+    stack_end=0x7fffa1e43ff8) at ../csu/libc-start.c:344
+344 ../csu/libc-start.c: No such file or directory.
+(gdb) s
+__GI_exit (status=11) at exit.c:139
+139 exit.c: No such file or directory.
+(gdb) p
+The history is empty.
+(gdb) ;
+Undefined command: "".  Try "help".
+(gdb) l
+134 in exit.c
+(gdb) continue
+Continuing.
+enter the  sides of the triangeenter the  sides of the triangenot scalene[Inferior 1 (process 375) exited with code 013]
+(gdb) Quit
