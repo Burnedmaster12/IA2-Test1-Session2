@@ -1,0 +1,221 @@
+ gcc -g p3final.c;
+./a.out;
+enter the size of an array
+5
+enter the numbers1
+2
+7
+8
+12
+the sum is 20
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from ./a.out...done.
+(gdb) b main
+Breakpoint 1 at 0x8f1: file p3final.c, line 40.
+(gdb) r
+Starting program: /home/runner/IA2-Test1-Session2-2/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p3final.c:40
+40  {
+(gdb) s
+42    n=input();
+(gdb) s
+input () at p3final.c:4
+4   {
+(gdb) s
+6     printf("enter the size of an array\n");
+(gdb) n
+enter the size of an array
+7     scanf("%d",&n);
+(gdb) n
+5
+8     return n;
+(gdb) n
+9   }
+(gdb) n
+main () at p3final.c:43
+43    int a[n];
+(gdb) s
+44    input_array(n,a);
+(gdb) n
+enter the numbers1
+2
+7
+8
+12
+45    sum=sum_composite(n,a);
+(gdb) s
+sum_composite (n=5, a=0x7ffca1bf62f0) at p3final.c:19
+19    int sum=0,count=0;
+(gdb) n
+20    for(int i=0;i<n;i++){
+(gdb) n
+21      for(int j=2;j<a[i];j++){
+(gdb) n
+27      if(count>=1)
+(gdb) n
+20    for(int i=0;i<n;i++){
+(gdb) n
+21      for(int j=2;j<a[i];j++){
+(gdb) n
+27      if(count>=1)
+(gdb) n
+20    for(int i=0;i<n;i++){
+(gdb) n
+21      for(int j=2;j<a[i];j++){
+(gdb) n
+22      if(a[i]%j==0)
+(gdb) n
+21      for(int j=2;j<a[i];j++){
+(gdb) n
+22      if(a[i]%j==0)
+(gdb) n
+21      for(int j=2;j<a[i];j++){
+(gdb) n
+22      if(a[i]%j==0)
+(gdb) n
+21      for(int j=2;j<a[i];j++){
+(gdb) n
+22      if(a[i]%j==0)
+(gdb) n
+21      for(int j=2;j<a[i];j++){
+(gdb) n
+22      if(a[i]%j==0)
+(gdb) n
+21      for(int j=2;j<a[i];j++){
+(gdb) n
+27      if(count>=1)
+(gdb) n
+20    for(int i=0;i<n;i++){
+(gdb) n
+21      for(int j=2;j<a[i];j++){
+(gdb) n
+22      if(a[i]%j==0)
+(gdb) n
+24        count+=1;
+(gdb) n
+21      for(int j=2;j<a[i];j++){
+(gdb) n
+22      if(a[i]%j==0)
+(gdb) n
+21      for(int j=2;j<a[i];j++){
+(gdb) n
+22      if(a[i]%j==0)
+(gdb) n
+24        count+=1;
+(gdb) n
+21      for(int j=2;j<a[i];j++){
+(gdb) n
+22      if(a[i]%j==0)
+(gdb) n
+21      for(int j=2;j<a[i];j++){
+(gdb) n
+22      if(a[i]%j==0)
+(gdb) n
+21      for(int j=2;j<a[i];j++){
+(gdb) n
+22      if(a[i]%j==0)
+(gdb) n
+21      for(int j=2;j<a[i];j++){
+(gdb) n
+27      if(count>=1)
+(gdb) n
+29        sum+=a[i];
+(gdb) n
+20    for(int i=0;i<n;i++){
+(gdb) n
+21      for(int j=2;j<a[i];j++){
+(gdb) n
+22      if(a[i]%j==0)
+(gdb) n
+24        count+=1;
+(gdb) n
+21      for(int j=2;j<a[i];j++){
+(gdb) n
+22      if(a[i]%j==0)
+(gdb) n
+24        count+=1;
+(gdb) n
+21      for(int j=2;j<a[i];j++){
+(gdb) n
+22      if(a[i]%j==0)
+(gdb) n
+24        count+=1;
+(gdb) n
+21      for(int j=2;j<a[i];j++){
+(gdb) n
+22      if(a[i]%j==0)
+(gdb) n
+21      for(int j=2;j<a[i];j++){
+(gdb) n
+22      if(a[i]%j==0)
+(gdb) n
+24        count+=1;
+(gdb) n
+21      for(int j=2;j<a[i];j++){
+(gdb) n
+22      if(a[i]%j==0)
+(gdb) n
+21      for(int j=2;j<a[i];j++){
+(gdb) n
+22      if(a[i]%j==0)
+(gdb) n
+21      for(int j=2;j<a[i];j++){
+(gdb) n
+22      if(a[i]%j==0)
+(gdb) n
+21      for(int j=2;j<a[i];j++){
+(gdb) n
+22      if(a[i]%j==0)
+(gdb) n
+21      for(int j=2;j<a[i];j++){
+(gdb) n
+22      if(a[i]%j==0)
+(gdb) n
+21      for(int j=2;j<a[i];j++){
+(gdb) n
+27      if(count>=1)
+(gdb) n
+29        sum+=a[i];
+(gdb) n
+20    for(int i=0;i<n;i++){
+(gdb) n
+33      return sum;
+(gdb) n
+34  }
+(gdb) n
+main () at p3final.c:46
+46    output(sum);
+(gdb) s
+output (sum=20) at p3final.c:37
+37    printf("the sum is %d",sum);
+(gdb) n
+38  }
+(gdb) n
+main () at p3final.c:48
+48  }(gdb) continue
+Continuing.
+the sum is 20[Inferior 1 (process 2661) exited normally]
+(gdb) p
+The history is empty.
+(gdb) l
+43    int a[n];
+44    input_array(n,a);
+45    sum=sum_composite(n,a);
+46    output(sum);
+47
+48  }(gdb) 
