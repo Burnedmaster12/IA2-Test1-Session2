@@ -1,43 +1,50 @@
-
 #include <stdio.h>
-int input()
+
+void input_string(char *a)
 {
-  int a;
-  printf("Enter the number\n");
-  scanf("%d%d",&a);
-  return a;
+  printf("Enter the string:\n");
+  scanf("%s", a);
+}
+int string_length(char *str)
+{
+  int n;
+  for (n = 0; str[n]; n++);
+  return n;
+} 
+
+void string_copy(char *d, char *s)
+{
+  for(int i=0;s[i]!='\0';i++)
+    d[i]=s[i];
 }
 
-int find_gcd(int a, int b)
+char *str_reverse(char *str)
 {
-  int gcd,t;
-  if( a >b)
+  int n,t;
+  n = string_length(str);
+  n--;
+  for (int i = 0; i< n/2; i++)
   {
-    t = a;
-    a = b;
-    b = t;
+     t= str[i];
+     str[i] = str[n-i];
+     str[n-i] = t;
   }
-  if ( b%a == 0)
-    return a;
-  for(int i=2; i<a/2; i++)
-  {
-    if ( a%i==0 && b%i==0)
-      gcd = i;
-  }
-  return gcd;
+  return str;
 }
 
-void output(int a, int b, int gcd)
+void output(char *a, char *reverse_a)
 {
-  printf("The gcd %d and %d is %d\n",a,b,gcd);
+  printf("The reverse of %s is %s\n", a, reverse_a);
 }
 
 int main()
 {
-  int a, b, gcd;
-  a = input();
-  b = input();
-  gcd = find_gcd(a,b);
-  output(a,b,gcd);
+  char str[100];
+  input_string(str);
+  char rev_str[100];
+  string_copy(rev_str,str);
+  str_reverse(rev_str);
+  output(str, rev_str);
   return 0;
 }
+
