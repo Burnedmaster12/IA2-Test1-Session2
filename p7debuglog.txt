@@ -1,0 +1,152 @@
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from ./a.out...done.
+(gdb) b main
+Breakpoint 1 at 0xaf9: file p7final.c, line 70.
+(gdb) r
+Starting program: /home/runner/IA2-Test1-Session2-2/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p7final.c:70
+70  {
+(gdb) s
+71    int count = input();
+(gdb) s
+input () at p7final.c:10
+10  {
+(gdb) s
+12    printf("enter the number of triangles:\n");
+(gdb) n
+enter the number of triangles:
+13    scanf("%d", &n);
+(gdb) n
+3
+14    return n;
+(gdb) n
+15  }
+(gdb) n
+main () at p7final.c:72
+72    Triangle tris[count];
+(gdb) s
+73    input_n_triangles(count, tris);
+(gdb) s
+input_n_triangles (n=3, t=0x7fffe58639a0) at p7final.c:27
+27    for (int i=0;i<n;i++)
+(gdb) n
+29      t[i] = input_triangle();
+(gdb) n
+Enter the base, height of a triangle:
+57
+85
+27    for (int i=0;i<n;i++)
+(gdb) n
+29      t[i] = input_triangle();
+(gdb) n
+Enter the base, height of a triangle:
+35
+74
+27    for (int i=0;i<n;i++)
+(gdb) n
+29      t[i] = input_triangle();
+(gdb) n
+Enter the base, height of a triangle:
+52
+78
+27    for (int i=0;i<n;i++)
+(gdb) n
+31  }
+(gdb) n
+main () at p7final.c:74
+74    find_areas(count, tris);
+(gdb) s
+find_areas (n=3, t=0x7fffe58639a0) at p7final.c:40
+40    for (int i=0;i<n;i++)
+(gdb) n
+42      find_area(&t[i]);
+(gdb) n
+40    for (int i=0;i<n;i++)
+(gdb) n
+42      find_area(&t[i]);
+(gdb) n
+40    for (int i=0;i<n;i++)
+(gdb) n
+42      find_area(&t[i]);
+(gdb) n
+40    for (int i=0;i<n;i++)
+(gdb) n
+44  }
+(gdb) n
+main () at p7final.c:75
+75    Triangle small = find_smallest_triangle(count, tris);
+(gdb) s
+find_smallest_triangle (n=3, t=0x7fffe58639a0) at p7final.c:49
+49    small = t[0];
+(gdb) s
+51    for (int i = 1; i < n; i++)
+(gdb) n
+53      if (small.area > t[i].area)
+(gdb) n
+55        small= t[i];
+(gdb) n
+51    for (int i = 1; i < n; i++)
+(gdb) n
+53      if (small.area > t[i].area)
+(gdb) n
+51    for (int i = 1; i < n; i++)
+(gdb) n
+58    return small;
+(gdb) n
+59  }
+(gdb) n
+main () at p7final.c:76
+76    output(count, tris, small);
+(gdb) s
+output (n=3, t=0x7fffe58639a0, smallest=...) at p7final.c:63
+63    for(int i=0;i<n-1;i++)
+(gdb) n
+65      printf("%f, %f and\n", t[i].base, t[i].height);
+(gdb) n
+57.000000, 85.000000 and
+63    for(int i=0;i<n-1;i++)
+(gdb) n
+65      printf("%f, %f and\n", t[i].base, t[i].height);
+(gdb) n
+35.000000, 74.000000 and
+63    for(int i=0;i<n-1;i++)
+(gdb) n
+67    printf("%f, %f\nis\ntriangle with base = %f and height = %f having area = %f\n", t[n-1].base, t[n-1].height, smallest.base, smallest.height, smallest.area);
+(gdb) n
+52.000000, 78.000000
+is
+triangle with base = 35.000000 and height = 74.000000 having area = 1295.000000
+68  }
+(gdb) n
+main () at p7final.c:77
+77    return 0;
+(gdb) n
+78  }(gdb) continue
+Continuing.
+[Inferior 1 (process 3163) exited normally]
+(gdb) p
+The history is empty.
+(gdb) c
+The program is not being run.
+(gdb) l
+73    input_n_triangles(count, tris);
+74    find_areas(count, tris);
+75    Triangle small = find_smallest_triangle(count, tris);
+76    output(count, tris, small);
+77    return 0;
+78  }(gdb)
